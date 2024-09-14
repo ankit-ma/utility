@@ -15,8 +15,6 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,4 +22,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+.glow-text:hover {
+  color: #00b4d8; /* Text color */
+
+  text-shadow: 0 0 20px #00b4d8;
 }
