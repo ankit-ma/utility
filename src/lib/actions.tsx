@@ -2,9 +2,15 @@
 
 export async function register(formData: FormData) {
   console.log("In register");
-  const p = await new Promise((resolve) => setTimeout(resolve, 5000));
-  console.log(formData);
-  return p;
+  // const p = await new Promise((resolve) => setTimeout(resolve, 5000));
+  const response = await fetch("/api/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+    body: formData,
+  });
+  console.log("Response", response);
 }
 
 export async function loginSubmit(formData: FormData) {

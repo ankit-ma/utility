@@ -4,10 +4,12 @@ let pending = false;
 export async function registerFun(formData: FormData) {
   pending = true;
   console.log("In register");
-  const p = await new Promise((resolve) => setTimeout(resolve, 2000));
+  const response = await fetch("http://localhost:3000/api/register", {
+    method: "POST",
+    body: await formData,
+  });
   console.log(formData);
   pending = false;
-  return p;
 }
 export default async function Register() {
   return (
